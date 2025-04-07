@@ -1,0 +1,26 @@
+{
+    "enabled": "true",
+    "increase-coverage": {
+      "project-name": "flow-crm-tutorial",
+      "target-branches": [
+        "main"
+      ],
+      "test-env-docker-stage": "test",
+      "build-test-env-docker-stage-script-path": "tool/build-test-env-docker-stage.sh",
+      "test-files-folders": [
+        "src/test"
+      ],
+      "source-test-file-paths": [
+        {
+          "source-file-path": "src/main/java/com/example/application/views/list/ContactForm.java",
+          "test-file-path": "src/test/java/com/example/application/views/list/ContactFormTest.java"
+        }
+      ],
+      "test-command": "./mvnw test",
+      "coverage-type": "jacoco",
+      "code-coverage-report-path": "coverage/jacoco.xml",
+      "desired-coverage": 90,
+      "max-iterations": 1,
+      "max-number-of-test-cases": 6
+    }
+}
