@@ -3,7 +3,7 @@
     "increase-coverage": {
       "project-name": "flow-crm-tutorial",
       "target-branches": [
-        "main"
+        "v24"
       ],
       "test-env-docker-stage": "test",
       "build-test-env-docker-stage-script-path": "tool/build-test-env-docker-stage.sh",
