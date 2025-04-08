@@ -1,7 +1,10 @@
-# ---------------- Build Stage ----------------
-    FROM eclipse-temurin:17-jdk AS builder
+# ---------------- Base Stage ----------------
+    FROM eclipse-temurin:17-jdk AS base
 
     WORKDIR /app
+    
+    # Install Redis (optional, only if your tests need it)
+    RUN apt-get update && apt-get install -y redis-server
     
     # Copy only files needed for dependency resolution first (better caching)
     COPY mvnw .
@@ -13,6 +16,16 @@
     
     # Copy rest of the code
     COPY . .
+    
+    # ---------------- Test Stage ----------------
+    FROM base AS test
+    
+    # Start Redis and run tests
+    CMD redis-server --daemonize yes && ./mvnw test
+    
+    
+    # ---------------- Build Stage ----------------
+    FROM base AS builder
     
     # Package the application, skipping tests
     RUN ./mvnw clean package -DskipTests
