@@ -81,4 +81,76 @@ public class ContactFormTest {
         assertEquals(company1, savedContact.getCompany());
         assertEquals(status2, savedContact.getStatus());
     }
+
+    @Test
+    public void test_form_fields_cleared_when_new_contact_is_set() {
+        ContactForm form = new ContactForm(companies, statuses);
+        Contact contact = new Contact();
+        contact.setFirstName("John");
+        contact.setLastName("Doe");
+        contact.setEmail("john@doe.com");
+        contact.setCompany(company1);
+        contact.setStatus(status1);
+        form.setContact(contact);
+    
+        form.setContact(new Contact());
+    
+        assertEquals("", form.firstName.getValue());
+        assertEquals("", form.lastName.getValue());
+        assertEquals("", form.email.getValue());
+        assertNull(form.company.getValue());
+        assertNull(form.status.getValue());
+    }
+
+
+    @Test
+    public void test_save_button_enabled_only_when_form_is_valid() {
+        ContactForm form = new ContactForm(companies, statuses);
+        Contact contact = new Contact();
+        form.setContact(contact);
+    
+        form.firstName.setValue("John");
+        form.lastName.setValue("Doe");
+        form.email.setValue("john@doe.com");
+        form.company.setValue(company1);
+        form.status.setValue(status1);
+    
+        assertTrue(form.save.isEnabled());
+    
+        form.firstName.setValue("");
+        assertFalse(form.save.isEnabled());
+    }
+
+
+    @Test
+    public void test_close_button_fires_event() {
+        ContactForm form = new ContactForm(companies, statuses);
+    
+        AtomicReference<ContactForm> closedFormRef = new AtomicReference<>(null);
+        form.addCloseListener(e -> {
+            closedFormRef.set(e.getSource());
+        });
+        form.close.click();
+        ContactForm closedForm = closedFormRef.get();
+    
+        assertEquals(form, closedForm);
+    }
+
+
+    @Test
+    public void test_delete_button_fires_event() {
+        ContactForm form = new ContactForm(companies, statuses);
+        Contact contact = new Contact();
+        form.setContact(contact);
+    
+        AtomicReference<Contact> deletedContactRef = new AtomicReference<>(null);
+        form.addDeleteListener(e -> {
+            deletedContactRef.set(e.getContact());
+        });
+        form.delete.click();
+        Contact deletedContact = deletedContactRef.get();
+    
+        assertEquals(contact, deletedContact);
+    }
+
 }
