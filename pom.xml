@@ -179,6 +179,21 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <forkCount>1</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <systemPropertyVariables>
+                    <vaadin.productionMode>true</vaadin.productionMode>
+                    </systemPropertyVariables>
+                    <parallel>none</parallel>
+                    <testTimeout>30</testTimeout> <!-- timeout in seconds per test -->
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>com.vaadin</groupId>
@@ -268,6 +283,11 @@
                         <configuration>
                             <trimStackTrace>false</trimStackTrace>
                             <enableAssertions>true</enableAssertions>
+                             <redirectTestOutputToFile>false</redirectTestOutputToFile>
+                            <useSystemClassLoader>true</useSystemClassLoader>
+                            <forkCount>1</forkCount>
+                            <reuseForks>true</reuseForks>
+                            <showStandardStreams>true</showStandardStreams>
                         </configuration>
                     </plugin>
                 </plugins>
