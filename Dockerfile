@@ -3,6 +3,7 @@
     ENV VAADIN_PRO_KEY=no
     ENV VAADIN_NPM_ENABLE_PNPM=true
     ENV DEBIAN_FRONTEND=noninteractive
+    ENV VAADIN_PRODUCTION_MODE=true
 
     WORKDIR /app
     
@@ -32,6 +33,7 @@
     ENV VAADIN_PRO_KEY=no
     ENV VAADIN_NPM_ENABLE_PNPM=true
     ENV DEBIAN_FRONTEND=noninteractive
+    ENV VAADIN_PRODUCTION_MODE=true
     
     # Start Redis and run tests
     # ✅ Use CMD for container execution (Qodo will override if needed)
