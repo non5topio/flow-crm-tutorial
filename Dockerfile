@@ -1,5 +1,8 @@
 # ---------------- Base Stage ----------------
     FROM eclipse-temurin:17-jdk AS base
+    ENV VAADIN_PRO_KEY=no
+    ENV VAADIN_NPM_ENABLE_PNPM=true
+    ENV DEBIAN_FRONTEND=noninteractive
 
     WORKDIR /app
     
@@ -25,6 +28,10 @@
     
     # ---------------- Test Stage ----------------
     FROM base AS test
+
+    ENV VAADIN_PRO_KEY=no
+    ENV VAADIN_NPM_ENABLE_PNPM=true
+    ENV DEBIAN_FRONTEND=noninteractive
     
     # Start Redis and run tests
     # ✅ Use CMD for container execution (Qodo will override if needed)
