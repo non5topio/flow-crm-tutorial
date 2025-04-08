@@ -19,6 +19,9 @@
     
     # ---------------- Test Stage ----------------
     FROM base AS test
+
+    # Make sure mvnw is executable
+    RUN chmod +x mvnw
     
     # Start Redis and run tests
     CMD redis-server --daemonize yes && ./mvnw test
