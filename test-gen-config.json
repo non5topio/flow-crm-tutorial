@@ -16,9 +16,9 @@
           "test-file-path": "src/test/java/com/example/application/views/list/ContactFormTest.java"
         }
       ],
-      "test-command": "./mvnw test",
+      "test-command": "./mvnw test verify",
       "coverage-type": "jacoco",
-      "code-coverage-report-path": "coverage/jacoco.xml",
+      "code-coverage-report-path": "target/site/jacoco/jacoco.xml",
       "desired-coverage": 90,
       "max-iterations": 1,
       "max-number-of-test-cases": 6
