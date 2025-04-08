@@ -11,26 +11,29 @@
     COPY .mvn .mvn
     COPY pom.xml .
     
+    # ✅ Ensure mvnw is executable
+    RUN chmod +x ./mvnw
+    
+    # ✅ Optional: Debug versions (helps identify environment issues)
+    RUN ./mvnw --version && java -version
+    
     # Pre-download dependencies to leverage Docker cache
     RUN ./mvnw dependency:go-offline
     
-    # Copy rest of the code
+    # Copy the rest of the project
     COPY . .
     
     # ---------------- Test Stage ----------------
     FROM base AS test
-
-    # Make sure mvnw is executable
-    RUN chmod +x ./mvnw
     
     # Start Redis and run tests
+    # ✅ Use CMD for container execution (Qodo will override if needed)
     CMD redis-server --daemonize yes && ./mvnw test
-    
     
     # ---------------- Build Stage ----------------
     FROM base AS builder
     
-    # Package the application, skipping tests
+    # ✅ Package the application, skipping tests
     RUN ./mvnw clean package -DskipTests
     
     # ---------------- Runtime Stage ----------------
