@@ -4,7 +4,7 @@
     WORKDIR /app
     
     # Install Redis (optional, only if your tests need it)
-    RUN apt-get update && apt-get install -y redis-server
+    RUN apt-get update && apt-get install -y redis-server maven
     
     # Copy only files needed for dependency resolution first (better caching)
     COPY mvnw .
