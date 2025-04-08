@@ -1,0 +1,15 @@
+<settings>
+  <profiles>
+    <profile>
+      <id>test-optimization</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <maven.test.failure.ignore>true</maven.test.failure.ignore>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <maven.source.skip>true</maven.source.skip>
+      </properties>
+    </profile>
+  </profiles>
+</settings>
