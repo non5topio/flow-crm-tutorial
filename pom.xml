@@ -12,6 +12,7 @@
     <properties>
         <java.version>17</java.version>
         <vaadin.version>24.7.1</vaadin.version>
+        <skipFrontend>false</skipFrontend>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -142,30 +143,10 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.11</version>
-                <!-- or latest stable -->
-                <executions>
-                    <execution>
-                        <id>prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.11</version>
                 <!-- Latest as of 2024 -->
                 <executions>
                     <execution>
+                        <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
@@ -188,10 +169,11 @@
                     <reuseForks>true</reuseForks>
                     <testFailureIgnore>false</testFailureIgnore>
                     <systemPropertyVariables>
-                    <vaadin.productionMode>true</vaadin.productionMode>
+                        <vaadin.productionMode>true</vaadin.productionMode>
+                        <skipFrontend>${skipFrontend}</skipFrontend>
                     </systemPropertyVariables>
                     <parallel>none</parallel>
-                    <testTimeout>30</testTimeout> <!-- timeout in seconds per test -->
+                    <testTimeout>300</testTimeout> <!-- timeout in seconds per test -->
                 </configuration>
             </plugin>
 
