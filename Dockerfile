@@ -5,6 +5,8 @@
     ENV DEBIAN_FRONTEND=noninteractive
     ENV VAADIN_PRODUCTION_MODE=true
 
+    export DYNACONF_TESTS__MAX_ALLOWED_RUNTIEM_SECONDS=1800
+
     WORKDIR /app
     
     # Install Redis (optional, only if your tests need it)
