@@ -16,7 +16,7 @@
           "test-file-path": "src/test/java/com/example/application/views/list/ContactFormTest.java"
         }
       ],
-      "test-command": "mvn clean test",
+      "test-command": "./gradlew clean test jacocoTestReport",
       "coverage-type": "jacoco",
       "code-coverage-report-path": "target/site/jacoco/jacoco.xml",
       "desired-coverage": 90,
