@@ -16,7 +16,7 @@
           "test-file-path": "src/test/java/com/example/application/views/list/ContactFormTest.java"
         }
       ],
-      "test-command": "mvn test -Dtest='!*E2E*' -DskipFrontend",
+      "test-command": "redis-server --daemonize yes && mvn test -DskipFrontend=true -Dvaadin.skip.devserver=true -Dvaadin.productionMode=true -Dtest='!*E2E*'",
       "coverage-type": "jacoco",
       "code-coverage-report-path": "target/site/jacoco/jacoco.xml",
       "desired-coverage": 90,
