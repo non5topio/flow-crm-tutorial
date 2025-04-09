@@ -16,7 +16,7 @@
           "test-file-path": "src/test/java/com/example/application/views/list/ContactFormTest.java"
         }
       ],
-      "test-command": "./mvnw jacoco:report test -Dtest=ContactFormTest -DskipFrontend=true",
+      "test-command": "service redis-server start && ./mvnw jacoco:report test -Dtest=ContactFormTest -DskipFrontend=true",
       "coverage-type": "jacoco",
       "code-coverage-report-path": "target/site/jacoco/index.xml",
       "desired-coverage": 90,
