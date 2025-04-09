@@ -12,7 +12,6 @@
     <properties>
         <java.version>17</java.version>
         <vaadin.version>24.7.1</vaadin.version>
-        <skipFrontend>false</skipFrontend>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,7 +30,7 @@
         </repository>
         <repository>
             <id>vaadin-prereleases</id>
-            <url>                
+            <url>
                 https://maven.vaadin.com/vaadin-prereleases/
             </url>
         </repository>
@@ -55,7 +54,7 @@
         </pluginRepository>
         <pluginRepository>
             <id>vaadin-prereleases</id>
-            <url>                
+            <url>
                 https://maven.vaadin.com/vaadin-prereleases/
             </url>
         </pluginRepository>
@@ -143,10 +142,30 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.11</version>
-                <!-- Latest as of 2024 -->
+                <!-- or latest stable -->
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.11</version>
+                <!-- Latest as of 2024 -->
+                <executions>
+                    <execution>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
@@ -169,11 +188,10 @@
                     <reuseForks>true</reuseForks>
                     <testFailureIgnore>false</testFailureIgnore>
                     <systemPropertyVariables>
-                        <vaadin.productionMode>true</vaadin.productionMode>
-                        <skipFrontend>${skipFrontend}</skipFrontend>
+                    <vaadin.productionMode>true</vaadin.productionMode>
                     </systemPropertyVariables>
                     <parallel>none</parallel>
-                    <testTimeout>300</testTimeout> <!-- timeout in seconds per test -->
+                    <testTimeout>30</testTimeout> <!-- timeout in seconds per test -->
                 </configuration>
             </plugin>
 

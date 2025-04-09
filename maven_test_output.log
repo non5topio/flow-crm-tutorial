@@ -1,0 +1,158 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.application:flowcrmtutorial:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.jacoco:jacoco-maven-plugin @ line 156, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------< com.example.application:flowcrmtutorial >---------------
+[INFO] Building flowcrmtutorial 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.11:prepare-agent (prepare-agent) @ flowcrmtutorial ---
+[INFO] argLine set to -javaagent:/home/nikhil/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/home/nikhil/Sentence-iq/Task/flow-crm-tutorial/target/jacoco.exec,output=file
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.11:prepare-agent (default) @ flowcrmtutorial ---
+[INFO] argLine set to -javaagent:/home/nikhil/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/home/nikhil/Sentence-iq/Task/flow-crm-tutorial/target/jacoco.exec,output=file
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ flowcrmtutorial ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- vaadin-maven-plugin:24.7.1:prepare-frontend (default) @ flowcrmtutorial ---
+[INFO] Reflections took 2090 ms to scan 252 urls, producing 13073 keys and 66562 values
+[INFO] Visited 117 classes. Took 146 ms.
+[INFO] Copying frontend resources from jar files ...
+[INFO] Visited 238 resources. Took 196 ms.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ flowcrmtutorial ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ flowcrmtutorial ---
+[INFO] skip non existing resourceDirectory /home/nikhil/Sentence-iq/Task/flow-crm-tutorial/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ flowcrmtutorial ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.5.2:test (default-test) @ flowcrmtutorial ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.application.views.list.ContactFormTest
+[INFO] Running com.example.application.it.LoginE2ETest
+16:23:28.827 [ForkJoinPool-1-worker-2] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.application.it.LoginE2ETest]: LoginE2ETest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:23:29.154 [ForkJoinPool-1-worker-2] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.application.Application for test class com.example.application.it.LoginE2ETest
+16:23:29.931 [ForkJoinPool-1-worker-4] INFO com.vaadin.pro.licensechecker.LicenseChecker -- Opening system browser to validate license. If the browser is not opened, please open https://vaadin.com/pro/validate-license?productName=vaadin-testbench&productVersion=9.3.10&connect=bb89802c-08c9-40aa-a894-de4083631004 manually
+16:23:29.938 [ForkJoinPool-1-worker-1] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 8.0.2.Final
+16:23:30.366 [ForkJoinPool-1-worker-4] INFO com.vaadin.pro.licensechecker.LicenseChecker -- For CI/CD build servers, you need to download a server license key, which can only be used for production builds. You can download a server license key from https://vaadin.com/myaccount/licenses.
+If you are working offline in development mode, please visit https://vaadin.com/pro/validate-license?getOfflineKey=mid-ef05ac4a-e85f467f for an offline development mode license.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.451 s -- in com.example.application.views.list.ContactFormTest
+[INFO] Running com.example.application.views.list.ListViewTest
+16:23:31.845 [ForkJoinPool-1-worker-1] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.application.views.list.ListViewTest]: ListViewTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:23:31.889 [ForkJoinPool-1-worker-1] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.application.Application for test class com.example.application.views.list.ListViewTest
+16:23:32.005 [ForkJoinPool-1-worker-1] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+  _____ _                  ____ ____  __  __   _____      _             _       _ 
+ |  ___| | _____      __  / ___|  _ \|  \/  | |_   _|   _| |_ ___  _ __(_) __ _| |
+ | |_  | |/ _ \ \ /\ / / | |   | |_) | |\/| |   | || | | | __/ _ \| '__| |/ _` | |
+ |  _| | | (_) \ V  V /  | |___|  _ <| |  | |   | || |_| | || (_) | |  | | (_| | |
+ |_|   |_|\___/ \_/\_/    \____|_| \_\_|  |_|   |_| \__,_|\__\___/|_|  |_|\__,_|_|
+                                                                                  
+
+2025-04-08T16:23:32.913+05:30  INFO 35185 --- [Pool-1-worker-1] c.e.application.views.list.ListViewTest  : Starting ListViewTest using Java 17.0.14 with PID 35185 (started by nikhil in /home/nikhil/Sentence-iq/Task/flow-crm-tutorial)
+2025-04-08T16:23:32.916+05:30  INFO 35185 --- [Pool-1-worker-1] c.e.application.views.list.ListViewTest  : No active profile set, falling back to 1 default profile: "default"
+2025-04-08T16:23:35.242+05:30  INFO 35185 --- [Pool-1-worker-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-08T16:23:35.547+05:30  INFO 35185 --- [Pool-1-worker-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 282 ms. Found 3 JPA repository interfaces.
+2025-04-08T16:23:36.621+05:30  INFO 35185 --- [Pool-1-worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-08T16:23:37.466+05:30  INFO 35185 --- [Pool-1-worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:259b611d-4366-4df1-8e6b-545a3aa8afe9 user=SA
+2025-04-08T16:23:37.470+05:30  INFO 35185 --- [Pool-1-worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-08T16:23:37.649+05:30  INFO 35185 --- [Pool-1-worker-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-08T16:23:38.145+05:30  INFO 35185 --- [Pool-1-worker-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-08T16:23:38.249+05:30  INFO 35185 --- [Pool-1-worker-1] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-08T16:23:38.936+05:30  INFO 35185 --- [Pool-1-worker-1] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-08T16:23:39.137+05:30  INFO 35185 --- [Pool-1-worker-1] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-08T16:23:41.130+05:30  INFO 35185 --- [Pool-1-worker-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-08T16:23:41.216+05:30  INFO 35185 --- [Pool-1-worker-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08T16:23:41.823+05:30  INFO 35185 --- [Pool-1-worker-1] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-08T16:23:43.586+05:30  WARN 35185 --- [Pool-1-worker-1] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-08T16:23:43.662+05:30  INFO 35185 --- [Pool-1-worker-1] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name users
+2025-04-08T16:23:44.590+05:30  WARN 35185 --- [Pool-1-worker-1] c.v.f.s.VaadinServletContextInitializer  : vaadin.whitelisted-packages is deprecated and may not be supported in the future. Use vaadin.allowed-packages instead.
+2025-04-08T16:23:45.228+05:30  INFO 35185 --- [Pool-1-worker-1] c.e.application.views.list.ListViewTest  : Started ListViewTest in 13.261 seconds (process running for 18.439)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.44 s -- in com.example.application.views.list.ListViewTest
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 62.24 s <<< FAILURE! -- in com.example.application.it.LoginE2ETest
+[ERROR] com.example.application.it.LoginE2ETest.loginAsValidUserSucceeds()[1] -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.vaadin.testbench.browser.BrowserExtension
+	at com.vaadin.testbench.browser.MultipleBrowsersExtension$CapabilitiesTestTemplateInvocationContext.getAdditionalExtensions(MultipleBrowsersExtension.java:80)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.ExceptionInInitializerError [in thread "ForkJoinPool-1-worker-4"]
+	at com.vaadin.pro.licensechecker.LicenseChecker.checkLicenseFromStaticBlock(LicenseChecker.java:97)
+	at com.vaadin.testbench.TestBenchVersion.<clinit>(TestBenchVersion.java:44)
+	at com.vaadin.testbench.TestBench.<clinit>(TestBench.java:34)
+	at com.vaadin.testbench.browser.BrowserExtension.<clinit>(BrowserExtension.java:52)
+	... 6 more
+
+[ERROR] com.example.application.it.LoginE2ETest.loginAsInvalidUserFails()[1] -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.ExceptionInInitializerError
+	at com.vaadin.pro.licensechecker.LicenseChecker.checkLicenseFromStaticBlock(LicenseChecker.java:97)
+	at com.vaadin.testbench.TestBenchVersion.<clinit>(TestBenchVersion.java:44)
+	at com.vaadin.testbench.TestBench.<clinit>(TestBench.java:34)
+	at com.vaadin.testbench.browser.BrowserExtension.<clinit>(BrowserExtension.java:52)
+	at com.vaadin.testbench.browser.MultipleBrowsersExtension$CapabilitiesTestTemplateInvocationContext.getAdditionalExtensions(MultipleBrowsersExtension.java:80)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: com.vaadin.pro.licensechecker.LicenseException: Unable to validate the license, please check your internet connection. If you need to work offline then please go to https://vaadin.com/pro/validate-license?getOfflineKey=mid-ef05ac4a-e85f467f to retrieve an offline key.
+For CI/CD build servers, you need to download a server license key, which can work offline to create production builds. You can download a server license key from https://vaadin.com/myaccount/licenses.
+For troubleshooting steps, see https://vaadin.com/licensing-faq-and-troubleshooting.
+	at com.vaadin.pro.licensechecker.LicenseChecker.checkLicense(LicenseChecker.java:520)
+	at com.vaadin.pro.licensechecker.LicenseChecker.checkLicense(LicenseChecker.java:416)
+	at com.vaadin.pro.licensechecker.LicenseChecker.checkLicense(LicenseChecker.java:214)
+	at com.vaadin.pro.licensechecker.LicenseChecker.checkLicense(LicenseChecker.java:190)
+	at com.vaadin.pro.licensechecker.LicenseChecker.checkLicense(LicenseChecker.java:125)
+	at com.vaadin.pro.licensechecker.LicenseChecker.checkLicenseFromStaticBlock(LicenseChecker.java:95)
+	... 9 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   LoginE2ETest.loginAsInvalidUserFails()[1] » ExceptionInInitializer
+[ERROR]   LoginE2ETest.loginAsValidUserSucceeds()[1] » NoClassDefFound Could not initialize class com.vaadin.testbench.browser.BrowserExtension
+[INFO] 
+[ERROR] Tests run: 5, Failures: 0, Errors: 2, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:12 min
+[INFO] Finished at: 2025-04-08T16:24:31+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.2:test (default-test) on project flowcrmtutorial: 
+[ERROR] 
+[ERROR] See /home/nikhil/Sentence-iq/Task/flow-crm-tutorial/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

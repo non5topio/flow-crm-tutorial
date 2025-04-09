@@ -16,12 +16,11 @@
           "test-file-path": "src/test/java/com/example/application/views/list/ContactFormTest.java"
         }
       ],
-      "test-command": "./mvnw jacoco:report test -Dtest=ContactFormTest -DskipFrontend=true",
+      "test-command": "mvn test -Dtest='!*E2E*' -DskipFrontend",
       "coverage-type": "jacoco",
-      "code-coverage-report-path": "target/site/jacoco/index.xml",
+      "code-coverage-report-path": "target/site/jacoco/jacoco.xml",
       "desired-coverage": 90,
       "max-iterations": 1,
-      "max-number-of-test-cases": 6,
-      "timeout": 600
+      "max-number-of-test-cases": 6
     }
 }
