@@ -63,5 +63,6 @@
     EXPOSE 8080
     
     # Run the application
+    ENTRYPOINT service redis-server start && "$@"
     ENTRYPOINT ["java", "-jar", "app.jar"]
     
