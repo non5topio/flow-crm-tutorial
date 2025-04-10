@@ -156,4 +156,40 @@ public class ContactFormTest {
         assertEquals(contact, deletedContact);
     }
 
+
+    @Test
+    public void test_set_contact_sets_bean_to_binder() {
+      ContactForm form = new ContactForm(companies, statuses);
+      Contact contact = new Contact();
+      form.setContact(contact);
+      assertEquals(contact, form.binder.getBean());
+    }
+
+
+    @Test
+    public void test_validate_and_save_does_not_fire_save_event_when_binder_is_not_valid() {
+      ContactForm form = new ContactForm(companies, statuses);
+      Contact contact = new Contact();
+      form.setContact(contact);
+      form.firstName.setValue("");
+      AtomicReference<Contact> savedContactRef = new AtomicReference<>(null);
+      form.addSaveListener(e -> {
+        savedContactRef.set(e.getContact());
+      });
+      form.save.click();
+      assertNull(savedContactRef.get());
+    }
+
+
+    @Test
+    public void test_contact_form_constructor_throws_null_pointer_exception_when_statuses_is_null() {
+      assertThrows(NullPointerException.class, () -> new ContactForm(companies, null));
+    }
+
+
+    @Test
+    public void test_contact_form_constructor_throws_null_pointer_exception_when_companies_is_null() {
+      assertThrows(NullPointerException.class, () -> new ContactForm(null, statuses));
+    }
+
 }
