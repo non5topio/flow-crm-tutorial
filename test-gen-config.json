@@ -12,8 +12,8 @@
       ],
       "source-test-file-paths": [
         {
-          "source-file-path": "src/main/java/com/example/application/views/list/ContactForm.java",
-          "test-file-path": "src/test/java/com/example/application/views/list/ContactFormTest.java"
+          "source-file-path": "app/src/main/java/com/example/application/views/list/ContactForm.java",
+          "test-file-path": "app/src/test/java/com/example/application/views/list/ContactFormTest.java"
         }
       ],
       "test-command": "redis-server --daemonize yes && mvn test -DskipFrontend=true -Dvaadin.skip.devserver=true -Dvaadin.productionMode=true -Dtest='!*E2E*'",
